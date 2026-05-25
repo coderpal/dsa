@@ -1,22 +1,18 @@
 class Solution:
     def containsDuplicate(self, nums: List[int]) -> bool:
-        
-        # initialize empty set
+
+        # inititialize empty set
         seen = set()
 
-        # for loop to loop through the array
-        for num in nums:
-
-            # check if the element exists in the set
-            if num in seen:
-
-                # if exists, then it is duplicate
-                # return True
+        for x in nums:
+            # check if the value is already in the set
+            # if True, then its a duplicate
+            if x in seen:
                 return True
 
-            # if not exists in seen, add that element in set
-            # will be useful till the loop ends
-            seen.add(num)
+            # add other element in set for loop to continue
+            seen.add(x)
 
-        # if no duplicate exists finally at the end of loop, return False
+        # if all elements are distinct
         return False
+        
