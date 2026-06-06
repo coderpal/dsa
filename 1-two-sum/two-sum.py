@@ -1,6 +1,5 @@
 class Solution:
     def twoSum(self, nums: List[int], target: int) -> List[int]:
-
         # initialise the empty dictionary where num = key & index = value
         seen = {}
 
@@ -18,4 +17,5 @@ class Solution:
 
             # if complement not in seen, save the key-value (nums-index) pair in the dict for further lookup
             seen[num] = index
+        
         
