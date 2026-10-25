@@ -1,21 +1,20 @@
 class Solution:
-    def twoSum(self, nums: List[int], target: int) -> List[int]:
-        # initialise the empty dictionary where num = key & index = value
+    def twoSum(self, nums: list[int], target: int) -> list[int]:
+        
+        # empty dictionary to store already seen numbers and its indices
         seen = {}
 
-        # loop from left to right, using enumerate to have the key-value pair
-        for index, num in enumerate(nums):
+        # check if the number and its index is already there in the seen dictionary
+        for i, n in enumerate(nums):
+            # calculate difference between target and the number
+            diff = target - n
 
-            # complement logic, the core logic
-            complement = target - num
+            # check if difference already in seen dict
+            if diff in seen:
+                # return difference and its index
+                return [seen[diff], i]
 
-            # if statement if complement is in the seen dictionary
-            if complement in seen:
+            # else, add the element in the seen dictionary
+            seen[n] = i
 
-                # return the index of the complement in the seen and current position index
-                return [seen[complement], index]
-
-            # if complement not in seen, save the key-value (nums-index) pair in the dict for further lookup
-            seen[num] = index
-        
-        
+        return []
