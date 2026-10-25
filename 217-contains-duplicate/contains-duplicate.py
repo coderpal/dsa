@@ -1,18 +1,17 @@
 class Solution:
-    def containsDuplicate(self, nums: List[int]) -> bool:
-
-        # inititialize empty set
+    def containsDuplicate(self, nums: list[int]) -> bool:
+        
+        # initialize set. (hash set)
         seen = set()
 
-        for x in nums:
-            # check if the value is already in the set
-            # if True, then its a duplicate
-            if x in seen:
+        # check if element in nums are already in set seen
+        for num in nums:
+            if num in seen:
+                # return true if the nums are already in set seen
                 return True
+            else:
+                # if not in set seen, add them
+                seen.add(num)
 
-            # add other element in set for loop to continue
-            seen.add(x)
-
-        # if all elements are distinct
+        # return false if all elements are distinct at the end of the loop
         return False
-        
